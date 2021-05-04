@@ -24,4 +24,34 @@ const regularExpressions = [
         description: 'Numeric check (only accept numbers, digitis)',
         example: 'Like - any numbers or digits (without space)'
     },
+    {
+        expression: '^[0-9]{10}$',
+        description: '10 digits number accept',
+        example: 'Like - any 10 digits mobile number'
+    },
+    {
+        expression: '^[0-9]{10,12}$',
+        description: '10 - 12 digits number accept',
+        example: 'Like - any 10 to 12 digits mobile number'
+    },
+    {
+        expression: '^\\d{10}$',
+        description: '10 digits number accept',
+        example: 'Like - any 10 digits mobile number'
+    },
+    {
+        expression: '^\\d{10,12}$',
+        description: '10 - 12 digits number accept',
+        example: 'Like - any 10 to 12 digits mobile number'
+    },
+    {
+        expression: '^[1-9]\\d{0,6}(\\.\\d{1,2})?$',
+        description: 'Numeric with 2 decimal point but not starting with 0 & should grater than 0',
+        example: 'Like - any price, salary etc'
+    },
+    {
+        expression: '^[0-9]\\d{0,6}(\\.\\d{1,2})?$',
+        description: 'Numeric with 2 decimal point accept 0 as value',
+        example: 'Like - any price, salary etc'
+    }
 ];
