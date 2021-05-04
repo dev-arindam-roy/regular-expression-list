@@ -1,10 +1,12 @@
 # regular-expression-list
 A list of different types of regular expressions 
 
+> Download all source codes and run the `index.html` file 
+ 
+
 <img width="946" alt="regx" src="https://user-images.githubusercontent.com/24665327/117038180-f70a3000-ad24-11eb-9d10-9f1914c4a3a8.png">
 
 ## Your List Showing Below - Just Copy & Use
----
 
 **Alpha character check (only accept A to Z / a to z, without space)**  
 *Like - any name (first name, last name etc.)*
