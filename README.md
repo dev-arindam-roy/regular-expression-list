@@ -3,25 +3,54 @@ A list of different types of regular expressions
 
 ```javascript
 
-    1. const alpha_without_space = /^[A-Za-z]+$/
+    1. const expression = /^[A-Za-z]+$/
+```
 
-    2. const alpha_with_space = /^[A-Z a-z]+$/
-    
-    3. const number_with_space = /[0-9]+$/
+```javascript
 
-    4. const only_number = /^[0-9]+$/
+    2. const expression = /^[A-Z a-z]+$/
+```
 
-    5. const only_number = /^\d+$/
+```javascript
 
-    6. const 10_digit_number = /^[0-9]{10}$/
+    3. const expression = /[0-9]+$/
+```
 
-    7. const 10_12_digit_number = /^[0-9]{10,12}$/
+```javascript
 
-    8. const 10_digit_number = /^\d{10}$/
+    4. const expression = /^[0-9]+$/
+```
 
-    9. const 10_digit_number = /^\d{10,12}$/
+```javascript
 
-    10. const number_with_decimal = /^[1-9]\d{0,6}(\.\d{1,2})?$/
-    
-    11. const number_with_decimal = /^[0-9]\d{0,6}(\.\d{1,2})?$/
+    5. const expression = /^\d+$/
+```
+
+```javascript
+
+    6. const expression = /^[0-9]{10}$/
+```
+
+```javascript
+
+    7. const expression = /^[0-9]{10,12}$/
+```
+
+```javascript
+
+    8. const expression = /^\d{10}$/
+```
+
+```javascript
+
+    9. const expression = /^\d{10,12}$/
+```
+
+```javascript
+
+    10. const expression = /^[1-9]\d{0,6}(\.\d{1,2})?$/
+```
+
+```javascript
+    11. const expression = /^[0-9]\d{0,6}(\.\d{1,2})?$/
 ```
