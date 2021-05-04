@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Regular Expression</title>
+        <style>
+            body {
+                padding: 15px;
+            }
+            h1 {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color: teal;
+                font-weight:bold;
+                letter-spacing: 5px;
+            }
+            table {
+                margin-top: 10px;
+                width: 100%;
+                border-collapse: collapse;
+            }
+            table thead th {
+                background-color: teal;
+                color: #fff;
+                padding: 6px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                border: 1px solid #fff;
+                text-align: left;
+            }
+            table tbody td, th {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 6px;
+                padding-right: 6px;
+                border: 1px solid teal;
+                text-align: left;
+            }
+            textarea.teta {
+                width: 100%;
+            }
+            .success {
+                color: green;
+                font-weight: bold;
+            }
+            .error {
+                color: red;
+                font-weight: bold;
+            }
+            span.regex-desc {
+                color: #989898;
+            }
+            span.regex-exp {
+                font-size: 14px;
+                color: #17a262;
+            }
+            span.regex-code {
+                background-color: #e8e8e8;
+                padding: 5px;
+                color: teal;
+                letter-spacing: 0px;
+                font-size: 14px;
+                border-radius: 4px;
+                border: 1px solid #ddd;
+                box-shadow: 0px 0px 1px #000;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Regular Expression List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20px;">SL</th>
+                    <th style="width: 45%;">Regular Expression</th>
+                    <th style="width: 35%;">Input Area</th>
+                    <th style="width: 100px;">Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="regular-expression-list.js"></script>
+        <script>
+            $(document).ready(function () {
+                var tbodyHtml = '';
+                for(var i = 0; i < regularExpressions.length; i++) {
+                    tbodyHtml += `
+                        <tr>
+                            <th>${i + 1}.</th>
+                            <th>
+                                <span class="regex-code">/${regularExpressions[i].expression}/</span><br/><br/>
+                                <span class="regex-desc"><small><i>${regularExpressions[i].description}</i></small></span><br/>
+                                <span class="regex-exp"><small><i>${regularExpressions[i].example}</i></small></span>
+                            </th>
+                            <td contenteditable="true" class="test-content" id="test_${i}" data-expression="${regularExpressions[i].expression}"></td>
+                            <td id="result_${i}"></td>
+                        </tr>
+                    `
+                }
+                $('table tbody').html(tbodyHtml);
+                var placeholder = 'Test it...';
+                $('.test-content').each( function () {
+                    $(this).text(placeholder);
+                });
+                $('body').on('click', '.test-content', function () {
+                    if ($(this).text().trim() === placeholder) {
+                        $(this).text('');
+                    }
+                });
+                $('body').on('blur', '.test-content', function () {
+                    if ($(this).text().trim() == '') {
+                        $(this).text(placeholder);
+                    }
+                });
+                $('body').on('keyup', '.test-content', function () {
+                    if ($(this).text().trim() != '') {
+                        var regex = $(this).data('expression').trim();
+                        var obj = new RegExp(regex);
+                        var testInput = $(this).text().trim();
+                        if (testInput.match(obj)) {
+                            $(this).next('td').html('<span class="success">TRUE!</span>');
+                        } else {
+                            $(this).next('td').html('<span class="error">FALSE!</span>');
+                        }
+                    } else {
+                        $(this).next('td').html('');
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
