@@ -87,5 +87,5 @@ A list of different types of regular expressions
 **Email**  
 *Like - arindam.php@gmail.com, arindam.roy.developer@gmail.com, test101011@yopmail.com*
 ```javascript
-    12. const expression = /^([a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/
+    13. const expression = /^([a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/
 ```
