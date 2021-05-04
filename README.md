@@ -77,3 +77,15 @@ A list of different types of regular expressions
 ```javascript
     11. const expression = /^[0-9]\d{0,6}(\.\d{1,2})?$/
 ```
+
+**A strong password**  
+*Like - Arindam#1234, Test#123456*
+```javascript
+    12. const expression = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$%&? "])[a-zA-Z0-9!#$%&?]{8,20}$/
+```
+
+**Email**  
+*Like - arindam.php@gmail.com, arindam.roy.developer@gmail.com, test101011@yopmail.com*
+```javascript
+    12. const expression = /^([a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/
+```
