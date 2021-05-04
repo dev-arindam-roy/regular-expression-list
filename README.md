@@ -1,6 +1,9 @@
 # regular-expression-list
 A list of different types of regular expressions 
 
+
+**Alpha character check (only accept A to Z / a to z, without space)**
+*Like - any name (first name, last name etc.)*
 ```javascript
 
     1. const expression = /^[A-Za-z]+$/
